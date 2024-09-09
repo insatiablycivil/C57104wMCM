@@ -1,0 +1,36 @@
+Package: C57104wMCM
+Type: Package
+Title: Simplified IEEE C57.104-2019 DGA Oil-Immersed Transformer
+        Screening Methodology With Integrated Monte Carlo Propagated
+        Uncertainty
+Version: 0.1.0
+Author: Michael Hosseini
+Maintainer: Michael Hosseini <michaelhosseini3141@gmail.com>
+Description: Applies a simplified version of the IEEE C57.104-2019 DGA 
+    Screening Methodology with added uncertainty propagation via a Monte Carlo
+    Method (MCM). It will output the per-gas DGA Status and Combined DGA Status 
+    as well as an estimated probability of each given outcomes based on the 
+    MCM. There is an optional Diagnostic step that will apply a combination of
+    Duval Triangles 1|4|5 (C57.104 Tables 6, D.3, and D.4, respectively), 
+    Rogers Ratio (C57.104 Table 5), and IEC 60599(2022) Tables 1|2 to the 
+    samples. It will provide diagnostics split in accordance to the Screening 
+    outputs. As a reminder, the IEEE Screening Methodology generally recommends
+    diagnostics only for a DGA Status of 2 or 3. The function will attempt to
+    use all gas samples provided; i.e., not limit Table 4 to 3-6 samples. A 
+    Normal, Triangular, or Uniform distribution shape may be selected. If the 
+    first, the uncertainty inputted is assumed to represent a 95% probability 
+    level. If the latter two, then the uncertainty is assumed to represent a 
+    100% probability level. Accuracy is interpretted  as a 0-1 %-equivalent of
+    the gas sample value whereas the minimum accuracy is interpretted as 
+    absolute values in PPM. If desired, a correlation can be added across gases
+    (i.e. within a given sample). This can be either as a rho or a correlation 
+    matrix. Please refer to my thesis as to some of the limitations, namely the
+    omission of correlations across samples to accommodate the Accuracy and 
+    Reproducibility as defined by ISO 5725 + IEC 60567.
+License: GPL-3
+Encoding: UTF-8
+Imports: roxygen2
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+NeedsCompilation: no
+Packaged: 2024-09-09 15:01:49 UTC; MHoss
