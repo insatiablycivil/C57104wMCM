@@ -114,7 +114,7 @@ Diagnosis_Plot <- function(DI, SC, PP) {
                              `3`  = "DGA Status 3",
                              `n1` = "DGA Status 2 or 3")
       }
-      print(ggplot(sampled) +
+      suppressWarnings(suppressMessages(print(ggplot(sampled) +
           geom_rect(data = Abs_D, aes(xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax,fill=Abs_D$label),alpha=0.3) +
           geom_point(aes(x = x, y = y, colour = D)) +
           geom_point(data = default, aes(x = x, y = y), fill = 'white', colour = 'white', shape=8) +
@@ -125,7 +125,7 @@ Diagnosis_Plot <- function(DI, SC, PP) {
           scale_fill_manual(values = colour_scale, drop = FALSE) +
           guides(fill=guide_legend(title="Diagnosis", override.aes=list(colour=colour_scale)), colour="none") +
           ggtitle(paste0(Abs_n_name, ": ", title_name), subtitle = "* = sampled value, • = default value") +
-          xlab("Gas Ratio") + ylab("C2H2/C2H4"))
+          xlab("Gas Ratio") + ylab("C2H2/C2H4"))))
       # Plots frequency of given diagnosis
       Abs_n <- paste0(Abs_n, "_L", L_n)
       plot(DI[names(DI) == Abs_n][[1]],

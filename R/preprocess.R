@@ -100,7 +100,7 @@ Preprocess <- function(gas_data, limit_data, accuracy, min_accuracy,
   Check_Diagnosis <- function(diagnosis, gas_data) {
     if(is.numeric(diagnosis) && (diagnosis==0)) return(diagnosis)
     if(!all(c("H2", "CH4", "C2H6", "C2H4", "C2H2") %in% colnames(gas_data))) {
-      stop("Error: \'gas_data\' must have the following gases for diagnosis: \n<H2,CH4,C2H6,C2H4,C2H2,CO,CO2>")
+      stop("Error: \'gas_data\' must have the following gases for diagnosis: \n<H2,CH4,C2H6,C2H4,C2H2>")
     }
     if(is.numeric(diagnosis)) {
       if(diagnosis==1) return(diagnosis)

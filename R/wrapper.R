@@ -109,7 +109,7 @@
 #'            min_accuracy = 1,
 #'            distribution_shape = "T",
 #'            rho = rho_in,
-#'            diagnosis = "DT",
+#'            diagnosis = 1,
 #'            n = 500,
 #'            flex = TRUE, silent = FALSE, verbose = TRUE, validate = TRUE)
 #' @export

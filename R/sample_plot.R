@@ -113,10 +113,10 @@ Sample_Plot <- function(y_N, PP) {
     } else {
       df2 <- as.data.frame(t(y_N[idx,,]))
       colnames(df2) <- PP$col_names
-      suppressWarnings(suppressMessages(ggpairs(df2,
+      suppressWarnings(suppressMessages(print(ggpairs(df2,
                     diag = list(continuous = Diag_Plot_Helper),
                     lower = list(continuous = Lower_Plot_Helper)) +
-            ggtitle(paste0("Correlations Across Generated Gas Samples: Day ", PP$gas_data$date[idx]))))
+            ggtitle(paste0("Correlations Across Generated Gas Samples: Day ", PP$gas_data$date[idx])))))
     }
   }
 }
